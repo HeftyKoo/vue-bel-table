@@ -1,0 +1,53 @@
+{
+  "name": "vue-bel-table",
+  "version": "1.0.0",
+  "description": "A vue table component that base on element ui.Just for using el-table component more convenient。",
+  "main": "dist/build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mb": "export PRODUCTION=1 && webpack --progress --hide-modules",
+    "wb": "set PRODUCTION=1 && webpack --progress --hide-modules",
+    "dev": "webpack-dev-server --progress --profile --colors --inline",
+    "port": "webpack-dev-server --progress --colors --inline --port 9090 ",
+    "ip": "webpack-dev-server --progress --profile --colors --inline --host=192.168.88.106  --port 9000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yeyuqiudeng/vue-bel-table.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yeyuqiudeng/vue-bel-table/issues"
+  },
+  "homepage": "https://github.com/yeyuqiudeng/vue-bel-table#readme",
+  "keywords": [
+    "vue-bel-table",
+    "vue",
+    "table",
+    "element-ui",
+    "vue-component"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-helper-vue-jsx-merge-props": "^2.0.2",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-component": "^0.9.1",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-plugin-transform-vue-jsx": "^3.4.2",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "babel-runtime": "^6.23.0",
+    "css-loader": "^0.27.3",
+    "vue-hot-reload-api": "^2.0.11",
+    "vue-loader": "^11.3.4",
+    "vue-style-loader": "^2.0.5",
+    "vue-template-compiler": "^2.2.6",
+    "webpack": "^2.3.2"
+  },
+  "author": {
+    "name": "Hefty",
+    "email": "yeyuqiudeng@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}
