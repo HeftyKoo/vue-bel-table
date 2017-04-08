@@ -110,7 +110,7 @@ export default {
             sort-method={columnAttr.sortMethod}
             resizable={columnAttr.resizable}
             formatter={columnAttr.formatter}
-            show-overfolw-tooltip={columnAttr.showOverflowTooltip}
+            show-overflow-tooltip={columnAttr.showOverflowTooltip}
             align={columnAttr.align}
             header-align={columnAttr.headerAlign}
             class-name={columnAttr.className}
