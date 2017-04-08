@@ -123,7 +123,7 @@ export default {
             filtered-value={columnAttr.filterValue}
           >
             {
-              column.scopedSlot ? this.$scopedSlots[column.scopedSlot] : ''
+              columnAttr.scopedSlot ? this.$scopedSlots[columnAttr.scopedSlot] : ''
             }
           </el-table-column>
         })
