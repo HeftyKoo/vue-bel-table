@@ -1,6 +1,6 @@
 {
   "name": "vue-bel-table",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A vue table component that base on element ui.Just for using el-table component more convenient。",
   "main": "dist/build.js",
   "scripts": {

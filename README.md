@@ -23,7 +23,28 @@ A vue table component that base on element ui.Just for using el-table component 
 
 ```javascript
 import BelTable from 'vue-bel-table'
-Vue.use(BelTable)
+Vue.use(BelTable, options)
+```
+
+## Options
+
+```javascript
+options: {
+    table: Object, // 自定义table默认属性，必须为element ui支持的表格属性
+    column: Object // 自定义列默认属性，必须为element ui支持的列属性
+}
+// 如果不传递，默认属性如下
+// 组件内的默认配置如下
+	table: {  // table的默认属性
+      data: [],
+      maxHeight: 600,
+      border: true
+    },
+    column: { // column的默认属性
+      showOverflowTooltip: true,
+      headerAlign: 'center',
+      resizable: true
+   }
 ```
 
 ## Props
@@ -44,18 +65,6 @@ configs: {
      }
    ]
  }
-
-// 组件内的默认配置如下
-	table: {  // table的默认属性
-      data: [],
-      maxHeight: 600,
-      border: true
-    },
-    column: { // column的默认属性
-      showOverflowTooltip: true,
-      headerAlign: 'center',
-      resizable: true
-   }
 ```
 
 ## events

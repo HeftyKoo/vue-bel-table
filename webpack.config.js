@@ -32,7 +32,7 @@ if (process.env.PRODUCTION) {
 
 module.exports = {
     entry: {
-        build: './main.js'
+        build: './src/bel-table.js'
     },
     output: {
         path: path.resolve(__dirname, './' + buildFolder),
