@@ -28,7 +28,8 @@ const install = function (Vue, options = {}) {
         validator (value) {
           return typeof value.columns !== 'undefined' && value.columns.length > 0
         }
-      }
+      },
+      data: Array
     },
     methods: {
       /**
@@ -59,12 +60,13 @@ const install = function (Vue, options = {}) {
       }
     },
     render () {
+      this.configs.table = this.configs.table || {}
       const tableAttr = Object.assign({}, this.configs.table.default || this.defaultAttr.table, this.configs.table.attr || {}) // 表格属性
       const columns = this.configs.columns  // 列配置
       const columnDefaultAttr = this.configs.columnDefault || this.defaultAttr.column // 列默认配置
       return <el-table ref="table"
                        style={{width: '100%'}}
-                       data={tableAttr.data}
+                       data={this.data ? this.data : tableAttr.data}
                        height={tableAttr.height}
                        max-height={tableAttr.maxHeight}
                        stripe={tableAttr.stripe}
