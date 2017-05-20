@@ -13,6 +13,11 @@ A vue table component that base on element ui.Just for using el-table component 
 
 对element的table组件进行了封装，更方便地使用elment ui的el-table组件
 
+## Dependency
+
+* [^Vue2.0](https://github.com/vuejs/vue)
+* [^Element 1.2.0](https://github.com/ElemeFE/element)
+
 ## Installation
 
 ```javascript
@@ -50,6 +55,7 @@ options: {
 ## Props
 
 ```javascript
+data: Array, // 表格的数据，1.1.0 新增，如果存在，configs中的attr的中可以不存在data属性
 configs: Object
 // configs的具体配置如下
 configs: {
@@ -76,6 +82,92 @@ configs: {
 跟element ui 的table methods 一致
 
 ## example
+
+1.1.0后更推荐这样使用：
+
+```vue
+<template>
+    <bel-table
+      ref="table"
+      @row-click="toggleRowSelection"
+      :data="tableData"
+      :configs="tableConfig">
+      <template slot="date" scope="scope">
+        <span>{{scope.row.date}}</span>
+      </template>
+    </bel-table>
+</template>
+
+<script type="text/babel">
+  export default {
+    data () {
+      return {
+        tableData: [{
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄'
+        }],
+        tableConfig: {
+        get () {
+          return {
+            columns: [
+              {
+                attr: {
+                  type: 'selection',
+                  width: 80,
+                  align: 'center'
+                }
+              },
+              {
+                attr: {
+                  prop: 'date',
+                  label: '日期',
+                  minWidth: 180,
+                  scopedSlot: 'date',
+                }
+              },
+              {
+                attr: {
+                  prop: 'name',
+                  label: '姓名',
+                  minWidth: 180
+                }
+              },
+              {
+                attr: {
+                  prop: 'address',
+                  label: '地址',
+                  minWidth: 180
+                }
+              }
+            ]
+          }
+        }
+      }
+      }
+    },
+    methods: {
+      toggleRowSelection (row) {
+        this.$refs.table.toggleRowSelection(row)
+      }
+    }
+  }
+</script>
+```
+
+1.1.0以前的使用方式，1.1.0以后的版本同样兼容
 
 ```vue
 <template>
@@ -163,6 +255,5 @@ configs: {
     }
   }
 </script>
-
 ```
 
