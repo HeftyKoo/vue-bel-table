@@ -35,21 +35,21 @@ Vue.use(BelTable, options)
 
 ```javascript
 options: {
-    table: Object, // 自定义table默认属性，必须为element ui支持的表格属性
-    column: Object // 自定义列默认属性，必须为element ui支持的列属性
+  	table: Object, // 自定义table默认属性，必须为element ui支持的表格属性
+  	column: Object // 自定义列默认属性，必须为element ui支持的列属性
 }
 // 如果不传递，默认属性如下
 // 组件内的默认配置如下
-	table: {  // table的默认属性
-      data: [],
-      maxHeight: 600,
-      border: true
-    },
-    column: { // column的默认属性
-      showOverflowTooltip: true,
-      headerAlign: 'center',
-      resizable: true
-   }
+table: {  // table的默认属性
+    data: [],
+    maxHeight: 600,
+    border: true
+},
+column: { // column的默认属性
+  	showOverflowTooltip: true,
+  	headerAlign: 'center',
+  	resizable: true
+}
 ```
 
 ## Props
@@ -120,42 +120,42 @@ configs: {
           address: '上海市普陀区金沙江路 1516 弄'
         }],
         tableConfig: {
-        get () {
-          return {
-            columns: [
-              {
-                attr: {
-                  type: 'selection',
-                  width: 80,
-                  align: 'center'
+          get () {
+            return {
+              columns: [
+                {
+                  attr: {
+                    type: 'selection',
+                    width: 80,
+                    align: 'center'
+                  }
+                },
+                {
+                  attr: {
+                    prop: 'date',
+                    label: '日期',
+                    minWidth: 180,
+                    scopedSlot: 'date',
+                  }
+                },
+                {
+                  attr: {
+                    prop: 'name',
+                    label: '姓名',
+                    minWidth: 180
+                  }
+                },
+                {
+                  attr: {
+                    prop: 'address',
+                    label: '地址',
+                    minWidth: 180
+                  }
                 }
-              },
-              {
-                attr: {
-                  prop: 'date',
-                  label: '日期',
-                  minWidth: 180,
-                  scopedSlot: 'date',
-                }
-              },
-              {
-                attr: {
-                  prop: 'name',
-                  label: '姓名',
-                  minWidth: 180
-                }
-              },
-              {
-                attr: {
-                  prop: 'address',
-                  label: '地址',
-                  minWidth: 180
-                }
-              }
-            ]
+              ]
+            }
           }
         }
-      }
       }
     },
     methods: {
